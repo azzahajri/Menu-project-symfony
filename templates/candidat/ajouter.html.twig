@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %} Ajout Nouvel Enregistrement {% endblock %}
+{% block body %}
+{% block titre %}{{ parent()|upper }} - Ajout Nouvel Enregistrement - {% endblock %}
+<h2> Ajouter  </h2>
+{% if form is defined %}
+{{ form_start(form) }}
+{{ form_widget(form) }}
+
+{{ form_end(form) }}
+{% endif %}
+{% endblock %}

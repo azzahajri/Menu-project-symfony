@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h2>List des Candidats | <small> <a href="{{ path('Ajouter')}}">Ajout</a></small></h2>
+<table class="table table-hover table-striped " border="1" >
+<thead>
+<tr>
+<th>#</th>
+<th>Nom&Prenom </th>
+<th>Contenu </th>
+<th>Date</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+{% for Candidat in lesCandidats %}
+<tr>
+<td>{{Candidat.id}}</td>
+<td>{{Candidat.candidat | upper }}</td>
+<td>{{Candidat.datec| date ('d/m/Y')}}</td>
+<td>{{Candidat.Contenu}}</td>
+<td>
+<a class="btn btn-primary" href="{{path('job_show',{'id': Candidat.id})}}">Voir</a>
+<a class="btn btn-info" href="{{path('candidature_edit',{'id': Candidat.id})}}">Modifier</a>
+<a class="btn btn-danger" href="{{path('cand_delete',{'id': Candidat.id})}}"
+ onclick="return confirm('Are you sure to delete ! {{ Candidat.candidat}}')">Supprimer</a>
+</td>
+</tr>
+{% else %}
+<tr>
+<td colspan="5">Aucun Abonné </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
+

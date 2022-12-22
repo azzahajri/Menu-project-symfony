@@ -1,0 +1,10 @@
+{# templates/Inscription/accueil.html.twig #}
+{% extends "base.html.twig" %}
+{% block title %}{{parent()}} - Accueil{% endblock %}
+{% block titre %}{{parent()|upper}} - Session Monastir 2022{% endblock %}
+{% block body %}
+<img src="{{asset('images/téléchargement.png')}}" title="my image" alt="My image"
+width="150" height="150">
+<h1><span class='text-success'> Bienvenue à notre page d'accueil</span> </h1>
+<h1>Your lucky number is {{ number }}</h1>
+{% endblock %}
