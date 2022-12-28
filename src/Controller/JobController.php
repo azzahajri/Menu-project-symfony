@@ -188,7 +188,8 @@ public function listeJob ()
     
      public function edit(Job $job, Request $request)
      {
-      
+        $publicPath = "uploads/jobs/";
+        //$job = new Job();
         
         $form = $this->createForm(JobType::class, $job);
          $form->handleRequest($request);
@@ -197,7 +198,11 @@ public function listeJob ()
             $image = $form->get('image')->getData();
             
             $em = $this->getDoctrine()->getManager();
-       
+        if($image){
+            $imageName = $job->getImage().'.'.$image->guessExtension();
+            $image->move($publicPath, $imageName);
+            $job->setImage($imageName);
+        }
              $this->em->flush();
              $this->addFlash('success', 'job modifié avec succés');
              return $this->redirectToRoute('liste_job');

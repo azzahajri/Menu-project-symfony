@@ -40,6 +40,7 @@ class JobType extends AbstractType
                             'image/jpg',
                             'image/gif',
                             'image/jpeg',
+                            'image/png',
                         ],
                         'mimeTypesMessage' => 'Please upload a valid Image',
                     ])
