@@ -77,7 +77,7 @@ class JobController extends AbstractController
         'publicPath'=> $publicPath]);
     }
     
- /**
+    /**
      * @var JobRepository;
      */
     private $repository;
@@ -135,7 +135,7 @@ public function AjoutJob(Request $request)
         $em = $this->getDoctrine()->getManager();
         $em->persist($job);
         $em->flush();
-        return $this -> redirectToRoute('Accueil');
+        return $this -> redirectToRoute('liste_job');
     }
  
     return $this->render('job/ajouter.html.twig',
@@ -188,10 +188,16 @@ public function listeJob ()
     
      public function edit(Job $job, Request $request)
      {
+      
         
-         $form = $this->createForm(JobType::class, $job);
+        $form = $this->createForm(JobType::class, $job);
          $form->handleRequest($request);
+        
          if ($form->isSubmitted() && $form->isValid()) {
+            $image = $form->get('image')->getData();
+            
+            $em = $this->getDoctrine()->getManager();
+       
              $this->em->flush();
              $this->addFlash('success', 'job modifié avec succés');
              return $this->redirectToRoute('liste_job');
