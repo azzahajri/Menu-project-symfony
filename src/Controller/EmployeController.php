@@ -144,8 +144,7 @@ public function AjoutEmp(Request $request)
     
      public function edit(Employe $employe, Request $request)
      {
-       
-      
+         
         $form = $this->createForm(EmployeType::class, $employe);
          $form->handleRequest($request);
         

@@ -7,16 +7,18 @@
   {% endfor %}
 <style>
 .container{
-   margin-top: 50px;
-   padding-bottom: 20px; 
+    border-radius:10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25);
+     margin: 60px;
+    padding: 60px;
 }
 </style>
-<div class="container">
-<h2>List des Employes| <small> <a href="{{ path('AjouterEmp')}}">Ajouter</a></small></h2>
-</div>
+
+<h2>List des Employes| <small> <a class="btn btn-primary" href="{{ path('AjouterEmp')}}">Ajouter</a></small></h2>
 
 
-<table class="table table-hover table-striped " border="1" >
+
+<table class="table table-hover table-striped " >
 <thead>
 <tr>
 
@@ -34,6 +36,7 @@
   
 <tbody>
 
+<div class="employe">
 {% for Employe in lesemploye %}
 <tr>
 <td>{{ Employe.id }}</td>
@@ -43,7 +46,7 @@
 <td>{{ Employe.getBornAt() | date ('d-m-Y') }}</td>
 <td>{{ Employe.getEmail }}</td>
 
-
+  </div>
 <td>
 <a class="btn btn-primary" href="{{path('employe_show',{'id': Employe.id})}}">Voir</a>
 <a class="btn btn-success" href="{{path('employe_edit',{'id': Employe.id})}}"
