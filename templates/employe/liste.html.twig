@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{% for message in app.flashes('success') %}
+      <div class="alert alert-success">
+         {{ message }}
+      </div>
+  {% endfor %}
+<style>
+.container{
+   margin-top: 50px;
+   padding-bottom: 20px; 
+}
+</style>
+<div class="container">
+<h2>List des Employes| <small> <a href="{{ path('AjouterEmp')}}">Ajouter</a></small></h2>
+</div>
+
+
+<table class="table table-hover table-striped " border="1" >
+<thead>
+<tr>
+
+<th>Id </th>
+<th>Image </th>
+<th>Nom </th>
+<th>Salaire</th>
+<th>BornAt</th>
+<th>Email</th>
+
+<th></th>
+</tr>
+</thead>
+
+  
+<tbody>
+
+{% for Employe in lesemploye %}
+<tr>
+<td>{{ Employe.id }}</td>
+
+<td>{{ Employe.getNom | upper }}</td>
+<td>{{ Employe.getSalaire }}</td>
+<td>{{ Employe.getBornAt() | date ('d-m-Y') }}</td>
+<td>{{ Employe.getEmail }}</td>
+
+
+<td>
+<a class="btn btn-primary" href="{{path('employe_show',{'id': Employe.id})}}">Voir</a>
+<a class="btn btn-success" href="{{path('employe_edit',{'id': Employe.id})}}"
+onclick="return confirm('Are you sure to update  ! ')">Modifier</a>
+<a class="btn btn-danger" href="{{path('emp_delete',{'id': Employe.id})}}"
+ onclick="return confirm('Are you sure to delete ! ')">Supprimer</a>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

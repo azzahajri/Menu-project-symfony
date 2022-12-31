@@ -1,0 +1,35 @@
+{% extends"base.html.twig" %}
+{%block title %} {{ parent() }} - Edit{% endblock %}
+{%block titre %} {{ parent()| upper }} - Consultation de  {% endblock %}
+{%block body %}
+<style>
+.departement{
+    border-radius:10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25);
+    margin: 50px;
+    padding: 16px 20px;
+}
+.img{
+    object-position:right;
+    border: 1px solid black;
+  background-color: silver;
+}
+</style>
+    <div class="departement">
+    <h1>Entreprise {{ departement.getNomDept }}</h1>
+    <h2>{{ departement.getResponsable }}</h2>
+    <h3>{{ departement.getNbrSalarie }}</h3>
+        <div clas="img">
+            <img src="{{ publicPath ~ departement.Image }}" >
+        </div> 
+        </div>
+        <ul class ="nav nav-pills nav-stacked">
+        {% for employe in lesemploye %}
+        <td>{{ employe.getNom | upper }}</td>
+        <td>{{ employe.getSalaire }}</td>
+        <td>{{ employe.getBornAt() | date ('d-m-Y') }}</td>
+        <td>{{ employe.getEmail }}</td>
+{% endfor %}
+   
+{% endblock %}
+

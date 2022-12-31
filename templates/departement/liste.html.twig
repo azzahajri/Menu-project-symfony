@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+{% for message in app.flashes('success') %}
+      <div class="alert alert-success">
+         {{ message }}
+      </div>
+  {% endfor %}
+<style>
+.container{
+   margin-top: 50px;
+   padding-bottom: 20px; 
+}
+</style>
+<div class="container">
+<h2>List des Departement| <small> <a href="{{ path('AjouterDepart')}}">Ajouter</a></small></h2>
+</div>
+
+
+<table class="table table-hover table-striped " border="1" >
+<thead>
+<tr>
+
+<th>Id </th>
+<th>Image </th>
+<th>Nom Departement </th>
+<th>Responsable</th>
+<th>Nombre Salarie</th>
+
+
+<th></th>
+</tr>
+</thead>
+<tbody>
+{% for departement in lesdepartement %}
+<tr>
+<td>{{departement.id}}</td>
+<td></td>
+<td>{{departement.getNomDept | upper }}</td>
+<td>{{departement.getResponsable}}</td>
+<td>{{departement.getNbrSalarie }}</td>
+
+
+<td>
+<a class="btn btn-primary" href="{{path('departement_show',{'id': departement.id})}}">Voir</a>
+<a class="btn btn-success" href="{{path('departement_edit',{'id': departement.id})}}"
+onclick="return confirm('Are you sure to update !  {{ departement.id}}')">Modifier</a>
+<a class="btn btn-danger" href="{{path('depart_delete',{'id': departement.id})}}"
+ onclick="return confirm('Are you sure to delete !  {{ departement.id}}')">Supprimer</a>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

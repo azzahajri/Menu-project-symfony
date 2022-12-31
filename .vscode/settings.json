@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "html.format.endWithNewline": true,
+  "html.validate.styles": false,
+  "html.format.unformatted": "",
+  "files.autoSave": "afterDelay",
+  "workbench.colorTheme": "Infinity Dark Theme Eye Friendly Colors",
+  "workbench.iconTheme": "vscode-icons",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "window.zoomLevel": 1,
+  "react-native-tools.showUserTips": false
+}

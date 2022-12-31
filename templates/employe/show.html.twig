@@ -1,0 +1,28 @@
+{% extends"base.html.twig" %}
+{%block title %} {{ parent() }} - Edit{% endblock %}
+{%block titre %} {{ parent()| upper }} - Consultation de  {% endblock %}
+{%block body %}
+<style>
+.employe{
+    border-radius:10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25);
+     margin: 50px;
+    padding: 16px 20px;
+
+}
+.img{
+    object-position:right;
+    border: 1px solid black;
+  background-color: silver;
+}
+</style>
+    <div class="employe">
+   
+        <h1>Employe {{ employe.getNom }}</h1>
+        <h2>{{ employe.getSalaire }}</h2>
+        <h3> Date de naissance  {{employe.getBornAt() | date ('d-m-Y') }}</h3>
+        <h4>{{ employe.getEmail }}</h4>
+        
+    </div>
+{% endblock %}
+

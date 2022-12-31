@@ -38,8 +38,7 @@ class SecurityController extends AbstractController
     $entityManager = $this->getDoctrine()->getManager();
     $entityManager->persist($user);
     $entityManager->flush();
-    return $this->redirectToRoute('show',['id'=>$user->getId(),
-    ]);
+    return $this->redirectToRoute('login');
     }
     return $this->render('security/form.html.twig',
     array('form' => $form->createView())
