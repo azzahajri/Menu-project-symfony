@@ -74,7 +74,10 @@ class __TwigTemplate_e9594c9a1777dac46e2ecf6571fef730ba54515c757761b2387527787f0
   <body>
     <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
     <div class=\"container-fluid\">
-      <a class=\"navbar-brand\" href=\"#\">Home</a>
+      <a class=\"navbar-brand\" href=\"";
+        // line 36
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\">Home</a>
       <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
         <span class=\"navbar-toggler-icon\"></span>
       </button>
@@ -82,13 +85,22 @@ class __TwigTemplate_e9594c9a1777dac46e2ecf6571fef730ba54515c757761b2387527787f0
         <ul class=\"navbar-nav me-auto\">
           
           <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"#\">Departement</a>
+            <a class=\"nav-link\" href=\"";
+        // line 44
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("liste_departement");
+        echo "\">Departement</a>
           </li>
           <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"#\">Pricing</a>
+            <a class=\"nav-link\" href=\"";
+        // line 47
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("liste_employe");
+        echo "\">Employe</a>
           </li>
           <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"#\">About</a>
+            <a class=\"nav-link\" href=\"";
+        // line 50
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
+        echo "\">Logout</a>
           </li>
           
             </ul>
@@ -96,7 +108,10 @@ class __TwigTemplate_e9594c9a1777dac46e2ecf6571fef730ba54515c757761b2387527787f0
             <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
             <ul class=\"navbar-nav me-auto\">
               <li class=\"nav-item\">
-                <a class=\"nav-link active\" href=\"#\">Connexion
+                <a class=\"nav-link active\" href=\"";
+        // line 58
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+        echo "\">Connexion
                 <span class=\"visually-hidden\">(current)</span>
                   </a>
               </li>
@@ -114,10 +129,7 @@ class __TwigTemplate_e9594c9a1777dac46e2ecf6571fef730ba54515c757761b2387527787f0
         echo "
      </div>
   
-    <a href=\"";
-        // line 74
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
-        echo "\">sign out</a>
+    
     
   </body>
 </html>
@@ -236,7 +248,7 @@ class __TwigTemplate_e9594c9a1777dac46e2ecf6571fef730ba54515c757761b2387527787f0
 
     public function getDebugInfo()
     {
-        return array (  218 => 70,  208 => 69,  195 => 22,  185 => 21,  173 => 18,  165 => 12,  155 => 11,  144 => 7,  134 => 6,  119 => 74,  114 => 71,  112 => 69,  67 => 26,  65 => 21,  62 => 20,  60 => 11,  56 => 9,  54 => 6,  47 => 1,);
+        return array (  230 => 70,  220 => 69,  207 => 22,  197 => 21,  185 => 18,  177 => 12,  167 => 11,  156 => 7,  146 => 6,  129 => 71,  127 => 69,  113 => 58,  102 => 50,  96 => 47,  90 => 44,  79 => 36,  67 => 26,  65 => 21,  62 => 20,  60 => 11,  56 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -276,7 +288,7 @@ class __TwigTemplate_e9594c9a1777dac46e2ecf6571fef730ba54515c757761b2387527787f0
   <body>
     <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
     <div class=\"container-fluid\">
-      <a class=\"navbar-brand\" href=\"#\">Home</a>
+      <a class=\"navbar-brand\" href=\"{{path('app_home')}}\">Home</a>
       <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
         <span class=\"navbar-toggler-icon\"></span>
       </button>
@@ -284,13 +296,13 @@ class __TwigTemplate_e9594c9a1777dac46e2ecf6571fef730ba54515c757761b2387527787f0
         <ul class=\"navbar-nav me-auto\">
           
           <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"#\">Departement</a>
+            <a class=\"nav-link\" href=\"{{path('liste_departement')}}\">Departement</a>
           </li>
           <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"#\">Pricing</a>
+            <a class=\"nav-link\" href=\"{{path('liste_employe')}}\">Employe</a>
           </li>
           <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"#\">About</a>
+            <a class=\"nav-link\" href=\"{{path('security_logout')}}\">Logout</a>
           </li>
           
             </ul>
@@ -298,7 +310,7 @@ class __TwigTemplate_e9594c9a1777dac46e2ecf6571fef730ba54515c757761b2387527787f0
             <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
             <ul class=\"navbar-nav me-auto\">
               <li class=\"nav-item\">
-                <a class=\"nav-link active\" href=\"#\">Connexion
+                <a class=\"nav-link active\" href=\"{{path('login')}}\">Connexion
                 <span class=\"visually-hidden\">(current)</span>
                   </a>
               </li>
@@ -314,7 +326,7 @@ class __TwigTemplate_e9594c9a1777dac46e2ecf6571fef730ba54515c757761b2387527787f0
 
      </div>
   
-    <a href=\"{{ path('security_logout') }}\">sign out</a>
+    
     
   </body>
 </html>

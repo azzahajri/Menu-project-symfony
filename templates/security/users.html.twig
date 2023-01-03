@@ -1,1 +1,38 @@
-<h1>Espace Utilisateurs</h1>
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+<style>
+.container{
+    border-radius:10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25);
+     margin: 60px;
+    padding: 60px;
+}
+.btn:hover {
+  transform: scale(1.1);
+  transition: 1s ease-out; 
+}
+
+</style>
+
+
+   
+
+{% for departement in lesdepartement %}
+ <div class="container">
+{{departement.id}}
+
+{{departement.getNomDept | upper }}
+{{departement.getResponsable}}
+{{departement.getNbrSalarie }}
+<div class="btn">
+
+
+<a class="btn btn-primary" href="{{path('departement_show',{'id': departement.id})}}">Voir</a>
+
+</div>
+</div>
+{% endfor %}
+
+{% endblock %}

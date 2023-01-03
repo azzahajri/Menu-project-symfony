@@ -10,5 +10,6 @@
   "workbench.iconTheme": "vscode-icons",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "window.zoomLevel": 1,
-  "react-native-tools.showUserTips": false
+  "react-native-tools.showUserTips": false,
+  "cSpell.words": ["lesdepartement"]
 }

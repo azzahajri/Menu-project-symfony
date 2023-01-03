@@ -11,6 +11,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use App\Form\DepartementType;
+use App\Entity\Departement;
+use Doctrine\ORM\EntityManagerInterface;
 
 class SecurityController extends AbstractController
 {
@@ -72,8 +75,12 @@ class SecurityController extends AbstractController
      */
     public function users()
     {
+         $em = $this ->getDoctrine()->getManager();
+        $repo = $em->getRepository(Departement::class);
+        $lesdepartement =$repo ->findAll();
         return $this->render('security/users.html.twig', [
             'controller_name' => 'AdminController', 
+            'lesdepartement' => $lesdepartement
         ]);
     }
 

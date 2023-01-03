@@ -1,12 +1,43 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+ 
+  font-family: "Poppins", sans-serif;
+}
 
+.container{
 
-<section class="container my-3">
-       
-        <div class="container d-flex flex-column">
-        <div class="row align-items-center justify-content-center gx-50 min-vh-100">
-          <div class="col-12 col-md-6 col-lg-4 py-8 py-md-11">
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height:400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 20px 20px 15px rgba(0,0,0,0.05);
+}
+.center form{
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.center h1{
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+}
+form .txt_field{
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+</style>
+<section class="container ">
+      
 
             <!-- Heading -->
             <h1 class="mb-0 fw-bold">
@@ -23,10 +54,10 @@
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" id="password" name="_password"/>
                 <button class="btn btn-lg btn-primary mt-3" type="submit"> Me connecte </button>
+               <a class="btn btn-primary mt-3" href="{{path('user_registration')}}">Register </a>
+
             </form>
-        </div>
-    </div>
-     </div>
+       
  
 </section>
 {% endblock %}

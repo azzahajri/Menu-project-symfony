@@ -15,6 +15,7 @@ return [
         '/employe' => [[['_route' => 'app_employe', '_controller' => 'App\\Controller\\EmployeController::index'], null, null, null, false, false, null]],
         '/liste' => [[['_route' => 'liste_employe', '_controller' => 'App\\Controller\\EmployeController::listeEmploye'], null, null, null, false, false, null]],
         '/AjouterEmp' => [[['_route' => 'AjouterEmp', '_controller' => 'App\\Controller\\EmployeController::AjoutEmp'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/image' => [[['_route' => 'app_image_index', '_controller' => 'App\\Controller\\ImageController::index'], null, ['GET' => 0], null, true, false, null]],
         '/image/new' => [[['_route' => 'app_image_new', '_controller' => 'App\\Controller\\ImageController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/number' => [[['_route' => 'app_inscription_number', '_controller' => 'App\\Controller\\InscriptionController::number'], null, null, null, false, false, null]],

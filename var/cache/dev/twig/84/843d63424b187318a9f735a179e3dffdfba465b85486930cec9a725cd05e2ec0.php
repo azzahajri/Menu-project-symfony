@@ -86,16 +86,18 @@ class __TwigTemplate_5ac7090fdc68b2603ed96476f9c17570685de7c6670356cf61d948eb870
         // line 9
         echo "<style>
 .container{
-   margin-top: 50px;
-   padding-bottom: 20px; 
+    border-radius:10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25);
+     margin: 60px;
+    padding: 60px;
 }
 </style>
-<div class=\"container\">
-<h2>List des Departement| <small> <a href=\"";
-        // line 16
+
+<h2>List des Departement| <small> <a class=\"btn btn-primary\" href=\"";
+        // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("AjouterDepart");
         echo "\">Ajouter</a></small></h2>
-</div>
+
 
 
 <table class=\"table table-hover table-striped \" border=\"1\" >
@@ -114,51 +116,51 @@ class __TwigTemplate_5ac7090fdc68b2603ed96476f9c17570685de7c6670356cf61d948eb870
 </thead>
 <tbody>
 ";
-        // line 35
+        // line 37
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["lesdepartement"]) || array_key_exists("lesdepartement", $context) ? $context["lesdepartement"] : (function () { throw new RuntimeError('Variable "lesdepartement" does not exist.', 35, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["lesdepartement"]) || array_key_exists("lesdepartement", $context) ? $context["lesdepartement"] : (function () { throw new RuntimeError('Variable "lesdepartement" does not exist.', 37, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["departement"]) {
-            // line 36
+            // line 38
             echo "<tr>
 <td>";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "id", [], "any", false, false, false, 37), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "id", [], "any", false, false, false, 39), "html", null, true);
             echo "</td>
 <td></td>
 <td>";
-            // line 39
-            echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "getNomDept", [], "any", false, false, false, 39)), "html", null, true);
-            echo "</td>
-<td>";
-            // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "getResponsable", [], "any", false, false, false, 40), "html", null, true);
-            echo "</td>
-<td>";
             // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "getNbrSalarie", [], "any", false, false, false, 41), "html", null, true);
+            echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "getNomDept", [], "any", false, false, false, 41)), "html", null, true);
+            echo "</td>
+<td>";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "getResponsable", [], "any", false, false, false, 42), "html", null, true);
+            echo "</td>
+<td>";
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "getNbrSalarie", [], "any", false, false, false, 43), "html", null, true);
             echo "</td>
 
 
 <td>
 <a class=\"btn btn-primary\" href=\"";
-            // line 45
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_show", ["id" => twig_get_attribute($this->env, $this->source, $context["departement"], "id", [], "any", false, false, false, 45)]), "html", null, true);
+            // line 47
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_show", ["id" => twig_get_attribute($this->env, $this->source, $context["departement"], "id", [], "any", false, false, false, 47)]), "html", null, true);
             echo "\">Voir</a>
 <a class=\"btn btn-success\" href=\"";
-            // line 46
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["departement"], "id", [], "any", false, false, false, 46)]), "html", null, true);
+            // line 48
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("departement_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["departement"], "id", [], "any", false, false, false, 48)]), "html", null, true);
             echo "\"
 onclick=\"return confirm('Are you sure to update !  ";
-            // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "id", [], "any", false, false, false, 47), "html", null, true);
-            echo "')\">Modifier</a>
-<a class=\"btn btn-danger\" href=\"";
-            // line 48
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("depart_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["departement"], "id", [], "any", false, false, false, 48)]), "html", null, true);
-            echo "\"
- onclick=\"return confirm('Are you sure to delete !  ";
             // line 49
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "id", [], "any", false, false, false, 49), "html", null, true);
+            echo "')\">Modifier</a>
+<a class=\"btn btn-danger\" href=\"";
+            // line 50
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("depart_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["departement"], "id", [], "any", false, false, false, 50)]), "html", null, true);
+            echo "\"
+ onclick=\"return confirm('Are you sure to delete !  ";
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["departement"], "id", [], "any", false, false, false, 51), "html", null, true);
             echo "')\">Supprimer</a>
 </td>
 </tr>
@@ -167,7 +169,7 @@ onclick=\"return confirm('Are you sure to update !  ";
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['departement'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 55
         echo "</tbody>
 </table>
 ";
@@ -191,7 +193,7 @@ onclick=\"return confirm('Are you sure to update !  ";
 
     public function getDebugInfo()
     {
-        return array (  171 => 53,  161 => 49,  157 => 48,  153 => 47,  149 => 46,  145 => 45,  138 => 41,  134 => 40,  130 => 39,  125 => 37,  122 => 36,  118 => 35,  96 => 16,  87 => 9,  78 => 6,  75 => 5,  71 => 4,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  173 => 55,  163 => 51,  159 => 50,  155 => 49,  151 => 48,  147 => 47,  140 => 43,  136 => 42,  132 => 41,  127 => 39,  124 => 38,  120 => 37,  98 => 18,  87 => 9,  78 => 6,  75 => 5,  71 => 4,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -206,13 +208,15 @@ onclick=\"return confirm('Are you sure to update !  ";
   {% endfor %}
 <style>
 .container{
-   margin-top: 50px;
-   padding-bottom: 20px; 
+    border-radius:10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25);
+     margin: 60px;
+    padding: 60px;
 }
 </style>
-<div class=\"container\">
-<h2>List des Departement| <small> <a href=\"{{ path('AjouterDepart')}}\">Ajouter</a></small></h2>
-</div>
+
+<h2>List des Departement| <small> <a class=\"btn btn-primary\" href=\"{{ path('AjouterDepart')}}\">Ajouter</a></small></h2>
+
 
 
 <table class=\"table table-hover table-striped \" border=\"1\" >

@@ -16,6 +16,7 @@ return [
     'AjouterEmp' => [[], ['_controller' => 'App\\Controller\\EmployeController::AjoutEmp'], [], [['text', '/AjouterEmp']], [], [], []],
     'emp_delete' => [['id'], ['_controller' => 'App\\Controller\\EmployeController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/supp']], [], [], []],
     'employe_edit' => [['id'], ['_controller' => 'App\\Controller\\EmployeController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/edit_employe']], [], [], []],
+    'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
     'app_image_index' => [[], ['_controller' => 'App\\Controller\\ImageController::index'], [], [['text', '/image/']], [], [], []],
     'app_image_new' => [[], ['_controller' => 'App\\Controller\\ImageController::new'], [], [['text', '/image/new']], [], [], []],
     'app_image_show' => [['id'], ['_controller' => 'App\\Controller\\ImageController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/image']], [], [], []],

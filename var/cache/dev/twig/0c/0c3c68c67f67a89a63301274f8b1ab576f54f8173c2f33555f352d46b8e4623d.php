@@ -102,7 +102,7 @@ class __TwigTemplate_bcde054f6f3896a796462ca7b2f3aab0a2f5035d77c368eed8370f2801b
 <tr>
 
 <th>Id </th>
-<th>Image </th>
+
 <th>Nom </th>
 <th>Salaire</th>
 <th>BornAt</th>
@@ -222,7 +222,7 @@ onclick=\"return confirm('Are you sure to update  ! ')\">Modifier</a>
 <tr>
 
 <th>Id </th>
-<th>Image </th>
+
 <th>Nom </th>
 <th>Salaire</th>
 <th>BornAt</th>

@@ -8,13 +8,15 @@
   {% endfor %}
 <style>
 .container{
-   margin-top: 50px;
-   padding-bottom: 20px; 
+    border-radius:10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25);
+     margin: 60px;
+    padding: 60px;
 }
 </style>
-<div class="container">
-<h2>List des Departement| <small> <a href="{{ path('AjouterDepart')}}">Ajouter</a></small></h2>
-</div>
+
+<h2>List des Departement| <small> <a class="btn btn-primary" href="{{ path('AjouterDepart')}}">Ajouter</a></small></h2>
+
 
 
 <table class="table table-hover table-striped " border="1" >

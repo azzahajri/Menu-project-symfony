@@ -5,7 +5,14 @@ namespace App\Entity;
 use App\Repository\EmployeRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\DBAL\Types\Types;
-
+use symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+/**
+ * @UniqueEntity(
+ *     fields={"email"},
+ *     message="I think you're already registered!"
+ * )
+ */
 #[ORM\Entity(repositoryClass: EmployeRepository::class)]
 
 class Employe
@@ -30,7 +37,12 @@ class Employe
     private ?\DateTimeImmutable $born_At = null;
 
     #[ORM\Column(length: 255)]
-    
+   /** 
+      * @Assert\Email( 
+         * message = "The email '{{ value }}' is not a valid email.", 
+         * checkMX = true 
+      * ) 
+   */ 
     private ?string $email = null;
     
     
